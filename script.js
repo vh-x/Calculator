@@ -34,7 +34,7 @@ const updateOperationKey = () => {
   operationKeys.forEach(
     (key) =>
       (key.classList =
-        operator === key.id ? "operationKey active" : "operationKey")
+        operator === key.value ? "operationKey active" : "operationKey")
   );
 };
 
@@ -50,13 +50,42 @@ operationKeys.forEach((key) => {
       operate();
       display.value = num;
     }
-    operator = key.id;
+    operator = key.value;
     updateOperationKey();
     num = display.value;
   });
 });
 
 document.getElementById("equalsKey").addEventListener("click", () => {
-  operate();
-  display.value = num;
+  if (operator) {
+    operate();
+    display.value = num;
+  }
+});
+
+addEventListener("keydown", (e) => {
+  if (
+    [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "0",
+      "+",
+      "-",
+      "*",
+      "/",
+      "Enter",
+    ].includes(e.key)
+  ) {
+    const key = document.getElementById(
+      e.key === "Enter" ? "equalsKey" : e.key
+    );
+    key.click();
+  }
 });
