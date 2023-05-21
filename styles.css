@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  font-family: "Quicksand", sans-serif;
+}
+
+body {
+  background-color: lightblue;
+}
+
+#title {
+  margin-top: 0;
+  border-radius: 0.5rem;
+  background-color: aquamarine;
+}
+
+#container {
+  width: 16rem;
+  text-align: center;
+  margin: 2vh auto;
+  border: 2px solid darkslategrey;
+  border-radius: 1rem;
+  padding: 1rem;
+  background-color: lightseagreen;
+}
+
+#display {
+  text-align: right;
+  font-size: 2rem;
+  width: 100%;
+  border: 2px solid darkslategray;
+  border-radius: 0.5rem;
+}
+
+#panel {
+  margin: 1rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+#panel > div {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#numPad {
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 10rem;
+}
+
+#operation {
+  flex-direction: column;
+}
+
+.operationKey.active {
+  background-color: #ddd;
+}
+
+button {
+  height: 3rem;
+  width: 3rem;
+  font-size: 2rem;
+  border: 2px solid darkslategray;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: white;
+}
+
+button:hover {
+  background-color: #eee;
+}
+
+button:active {
+  transform: scale(0.95);
+}
